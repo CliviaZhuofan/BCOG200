@@ -21,25 +21,23 @@ def create_cake():
     else:
         x_position = screen_width - cake_width  # Right side
 
-    # Create the cake object (you'll need to define this class or structure)
     new_cake = cake(x=x_position, y=0, image=cake.png)  # Adjust attributes as needed
 
     return new_cake
 while True:
-    # Spawn a new cake from either left or right
-    new_cake = create_cake()  # Implement this function to create a new cake
+    new_cake = create_cake()  
     cakes.append(new_cake)
 
 
     for cake in cakes:
-        cake.move(cake_speed)  # Implement this function to move the cake horizontally
+        cake.move(cake_speed) 
 
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                 exit()
-            elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+            if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 # Left mouse button clicked!
                 clicked_cake = find_clicked_cake(event.pos)
                 if clicked_cake:
@@ -52,10 +50,3 @@ while True:
     # Render the game (draw cakes, score, etc.)
     render_game()
 
-# Functions to implement:
-# - create_cake(): Create a new cake with random position (left or right)
-# - cake.move(speed): Move the cake horizontally
-# - mouse_clicked(): Check if the mouse was clicked
-# - find_clicked_cake(): Find the cake that was clicked
-# - stop_cake(cake): Stop the cake's movement
-# - render_game(): Draw cakes, score, and other game elements
