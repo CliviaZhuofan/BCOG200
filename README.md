@@ -1,2 +1,4 @@
 # BCOG200
-for final project
+Zhuofan Feng for final project
+Net ID: zf16
+Student Number: 664328462
